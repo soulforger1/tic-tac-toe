@@ -9,7 +9,7 @@ interface Props {
 
 export const BoardEye: React.FC<Props> = ({id}) => {
   const animatedValue = useRef(new Animated.Value(0)).current;
-  const {player, setPlayer}: any = useContext(Context);
+  const {player, setPlayer, board}: any = useContext(Context);
   const [value, setValue] = useState<string | null>(null);
   const scale = animatedValue.interpolate({
     inputRange: [0, 1],
@@ -28,6 +28,8 @@ export const BoardEye: React.FC<Props> = ({id}) => {
         value: player.value === 'cross' ? 'ellipse' : 'cross',
         id: player.id === 2 ? 1 : 2,
       });
+      board[(id - (id % 3)) / 3][id % 3] =
+        player.value === 'cross' ? 'ellipse' : 'cross';
     }
   };
 

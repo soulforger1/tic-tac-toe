@@ -4,9 +4,9 @@ export const Context = createContext({});
 
 export const ContextProvider: React.FC<any> = ({children}) => {
   const [board, setBoard] = useState([
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', ''],
   ]);
   const [player, setPlayer] = useState('');
   const [playersData, setPlayersData] = useState({});

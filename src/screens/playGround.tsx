@@ -1,11 +1,12 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Animated, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {BoardEye} from '../components';
+import {BoardEye, CheckingFunction} from '../components';
 import {Context} from '../provider/context';
 
 export const PlayGround: React.FC<any> = props => {
   const {player}: any = useContext(Context);
+  CheckingFunction();
 
   return (
     <LinearGradient colors={['#00D2FF', '#3A7BD5']} style={{flex: 1}}>
